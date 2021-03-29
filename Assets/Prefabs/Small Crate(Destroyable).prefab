@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7354603860299323361}
   - component: {fileID: 7354603860299323366}
   m_Layer: 0
-  m_Name: Small Crate
-  m_TagString: Untagged
+  m_Name: Small Crate(Destroyable)
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &7354603860299323366
 MonoBehaviour:
@@ -139,10 +139,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7354603860299323367}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a667abc5075409a458aa0cd7851af8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destructableRef: {fileID: 314053012014654191, guid: 8539f5d4c32be7e4fb5995cadb049bb3, type: 3}
+  partcileExplosionRef: {fileID: 0}
   health: 3

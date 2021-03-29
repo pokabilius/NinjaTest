@@ -13,6 +13,8 @@ public class DamageScript : MonoBehaviour
     [SerializeField]
     int health = 1;
 
+    public static bool isDestroyed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,7 @@ public class DamageScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Weapon")) // find the collision parameter object by tag 
+        if (collision.CompareTag("Weapon")|| collision.CompareTag("Bullet")) // find the collision parameter object by tag 
         {
             health--;
 
@@ -35,12 +37,14 @@ public class DamageScript : MonoBehaviour
             if (health <= 0)
             {
                 ExplodeThisGameObject();
+                isDestroyed = true;
             }
         }
     }
 
     void ExplodeThisGameObject()
     {
+        
         GameObject destructable = (GameObject)Instantiate(destructableRef);
         //GameObject particles = (GameObject)Instantiate(partcileExplosionRef);
 
@@ -50,4 +54,6 @@ public class DamageScript : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    
 }

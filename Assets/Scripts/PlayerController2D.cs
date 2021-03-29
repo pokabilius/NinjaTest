@@ -75,7 +75,7 @@ public class PlayerController2D : MonoBehaviour
             else
             {
                 //Debug.Log("Pressed primary button.");
-                animator.Play("attack");
+                animator.Play("jumpAttack");
                 isAttacking = true;
 
                 StartCoroutine(DoAttack()); // coroutine to activate and deactivate after attack the hitbox. otherwise it can collide with objects
@@ -205,8 +205,6 @@ public class PlayerController2D : MonoBehaviour
             //}
         }
    
-
-
     }
 
     void ResetAtack()
